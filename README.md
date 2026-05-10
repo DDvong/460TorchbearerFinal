@@ -38,8 +38,8 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Entrance Node (S) | Starting point |
+| Relic Chambers(M) | Subsequent goal nodes to travel from a node to another node |
 
 ### Part 2b: Distance Storage
 
