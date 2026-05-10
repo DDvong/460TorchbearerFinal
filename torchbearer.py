@@ -87,6 +87,29 @@ def run_dijkstra(graph, source):
 
     TODO
     """
+    #create empty dictionary to record minimum fuel consumption
+    distance = {}
+    #intialize all nodes to infinity, source starting node to 0
+    for node in graph:
+        distance[node] = float('inf')
+    distance[source] = 0
+
+    #intializing heap with starting node that is storing pairs of (cost,node)
+    heap = []
+    heapq.heappush(heap, (0, source)) #add the entrance node with cost 0, node 'S'
+    
+    while heap:
+        curr_cost, node = heapq.heappop(heap) #pop the node with the smallest current distance cost
+        #explores the edges of the current node
+        for neighbor, weight in graph[node]: 
+              new_cost = curr_cost + weight #total distance it takes to reach the neighbor node from the current node
+
+              if new_cost < distance[neighbor]: #if the new path is cheaper than the current minimum cost 
+                distance[neighbor] = new_cost #update the update the dictionary of minimum cost
+                heapq.heappush(heap, (new_cost, neighbor)) #push neigbor nodes into heap to be explored after curr_node
+            
+    return distance #returns the shortest distance from the source to the nodes
+
     pass
 
 
