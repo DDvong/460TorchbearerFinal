@@ -34,8 +34,17 @@ def explain_problem():
 
     TODO
     """
-    return "TODO"
+    return """
+    - Why a single shortest-path run from S is not enough:
+    We have to visit every relic chamber once but the path shows how to go to the cheapest nodes to the end but without considering the potential total minimum cost that comes from visiting all nodes.
 
+    - What decision remains after all inter-location costs are known:
+    After finding the cost from u to v, we have to find the optimal fuel consumption order as there are different orders that results in minimum cost.
+
+    - Why this requires a search over orders (one sentence):
+    We search over orders to identify different orders to find the minimum fuel cost. """
+
+    
 
 # =============================================================================
 # PART 2
