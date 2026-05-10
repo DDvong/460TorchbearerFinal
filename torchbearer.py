@@ -63,8 +63,11 @@ def select_sources(spawn, relics, exit_node):
     list[node]
         No duplicates. Order does not matter.
 
-    TODO
+    TODO 
     """
+    #create a list for starting entrance and add relic chambers
+    source_node = [spawn] + relics
+    return source_node
     pass
 
 
