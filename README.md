@@ -47,11 +47,11 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Dictionary |
+| What the keys represent | Individual Destination Nodes |
+| What the values represent | Minimum Fuel Cost |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | Hash Table |
 
 ### Part 2c: Precomputation Complexity
 
