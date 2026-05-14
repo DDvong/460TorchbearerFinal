@@ -100,6 +100,10 @@ def run_dijkstra(graph, source):
     
     while heap:
         curr_cost, node = heapq.heappop(heap) #pop the node with the smallest current distance cost
+        #skipping paths that are longer than current best paths
+        if curr_cost > distance[node]:
+            continue
+
         #explores the edges of the current node
         for neighbor, weight in graph[node]: 
               new_cost = curr_cost + weight #total distance it takes to reach the neighbor node from the current node
@@ -130,6 +134,15 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
     TODO
     """
+    #create empty dictionary to store shortest distances
+    distance_table = {}
+    #helper functions 
+    #retrieves source nodes and run dijkstra for each node
+    for source in select_sources(spawn, relics, exit_node): 
+        distance_table[source] = run_dijkstra(graph, source) #storing shortest distance
+d
+    return distance_table
+
     pass
 
 
