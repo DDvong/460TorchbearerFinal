@@ -47,20 +47,20 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Dictionary |
+| What the keys represent | Individual Destination Nodes |
+| What the values represent | Minimum Fuel Cost |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | Hash Table |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** k + 1
+- **Cost per run:** O(m log n)
+- **Total complexity:** O(k * m log n)
+- **Justification (one line):** Running Dijkstra from source to every k relic chambers node to find the shortest path
 
 ---
 
