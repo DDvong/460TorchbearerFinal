@@ -75,10 +75,10 @@
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  A node being finalized means their distance is the shortest path possible.
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  A node not yet finalized means its the shortest path thats been discovered thus far.
 
 ### Part 3b: Why Each Phase Holds
 
