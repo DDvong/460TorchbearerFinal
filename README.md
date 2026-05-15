@@ -132,10 +132,10 @@ The Torchbearer's planner correct routing decisions applies correct distances to
 
 ### Part 6c: Pruning Correctness
 
--Due to non-negative costs, a branch that exceed the current best minimum path skips as'll increase the total cost from the current best.
+- Due to non-negative costs, a branch that exceed the current best minimum path skips as it will increase the total cost from the current best.
 
 ---
 
 ## References
 
--Youtube videos for visualization, such as Abdul Bari, ByteQuest.
+- Youtube videos for visualization, such as Abdul Bari, ByteQuest.
