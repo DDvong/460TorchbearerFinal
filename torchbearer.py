@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Dylan Vongkaysone
+Student ID:   828232529
 
 INSTRUCTIONS
 ------------
@@ -42,9 +42,7 @@ def explain_problem():
     After finding the cost from u to v, we have to find the optimal fuel consumption order as there are different orders that results in minimum cost.
 
     - Why this requires a search over orders (one sentence):
-    We search over orders to identify different orders to find the minimum fuel cost. """
-
-    
+    We search over orders to identify different orders to find the minimum fuel cost. """ 
 
 # =============================================================================
 # PART 2
@@ -68,8 +66,7 @@ def select_sources(spawn, relics, exit_node):
     #create a list for starting entrance and add relic chambers
     source_node = [spawn] + relics
     return source_node
-    pass
-
+   
 
 def run_dijkstra(graph, source):
     """
@@ -114,8 +111,6 @@ def run_dijkstra(graph, source):
             
     return distance #returns the shortest distance from the source to the nodes
 
-    pass
-
 
 def precompute_distances(graph, spawn, relics, exit_node):
     """
@@ -142,8 +137,6 @@ def precompute_distances(graph, spawn, relics, exit_node):
         distance_table[source] = run_dijkstra(graph, source) #storing shortest distance
 
     return distance_table
-
-    pass
 
 
 # =============================================================================
@@ -173,8 +166,6 @@ def dijkstra_invariant_check():
     Part 3c:
     -The Torchbearer's planner correct routing decisions applies correct distances to get the efficient path.
     """
-
-
 
 # =============================================================================
 # PART 4
@@ -237,7 +228,6 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
              cost_so_far, exit_node, best)
 
     return tuple(best)
-    pass
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
@@ -269,8 +259,41 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
-    pass
 
+
+    #base case
+    #checks if unvisited relics is empty
+    if len(relics_remaining) == 0:
+        #add the cost of traveling from current location to the exit node
+        final_cost = cost_so_far + dist_table[current_loc][exit_node]
+        # checks if this route is cheaper than the best found so far
+        if final_cost < best[0]:
+            best[0] = final_cost#update best fuel cost
+            best[1] = list(relics_visited_order)#update best route order
+        return
+
+    #pruning
+    #safe: all costs are non-negative, if current cost already exceeds best it can stop exploring 
+    #as it will increase the total cost from the current best.
+    if cost_so_far >= best[0]:
+        return
+    
+    #recursive case
+    #checking for remaning relics
+    for relic in list(relics_remaining):
+        #calculate cost of traveling to relic
+        travel_cost = dist_table[current_loc][relic]
+        #mark relic as collected
+        relics_remaining.remove(relic)
+        relics_visited_order.append(relic)
+        #current_loc becomes relic and cost_so_far + travel_cost is the total fuel spent to get to relic
+        _explore(dist_table, relic, relics_remaining, relics_visited_order, cost_so_far + travel_cost, exit_node, best)
+        
+        #backtracking
+        #unmark a relic, removes relic from visited path and put it back into remaining node
+        #the next iteration tries different orders with recursive call
+        relics_visited_order.pop()
+        relics_remaining.append(relic)
 
 # =============================================================================
 # PIPELINE
@@ -293,7 +316,12 @@ def solve(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    #from the distance table it precompute shortest distances between nodes
+    dist_table = precompute_distances(graph, spawn, relics, exit_node)
+    
+    #returns the optimal route
+    return find_optimal_route(dist_table, spawn, relics, exit_node)
+
 
 
 # =============================================================================
