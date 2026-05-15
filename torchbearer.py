@@ -140,7 +140,7 @@ def precompute_distances(graph, spawn, relics, exit_node):
     #retrieves source nodes and run dijkstra for each node
     for source in select_sources(spawn, relics, exit_node): 
         distance_table[source] = run_dijkstra(graph, source) #storing shortest distance
-d
+
     return distance_table
 
     pass
@@ -160,7 +160,20 @@ def dijkstra_invariant_check():
 
     TODO
     """
-    return "TODO"
+    return """
+    Part 3a:
+    - For nodes already finalized (in S): A node being finalized means their distance is the shortest path possible.
+    - For nodes not yet finalized (not in S): A node not yet finalized means its the shortest path thats been discovered thus far.
+
+    Part 3b:
+    - Source node is initialized to zero, all other nodes are set to infinity. No path has been discovered, the only shortest path is S.
+    - As edge weights are non-negative, dist[u] is the shortest discovered path using finalized min-dist nodes.
+    - Finalized nodes are the shortest and cheapest path calculated in the graph.
+
+    Part 3c:
+    -The Torchbearer's planner correct routing decisions applies correct distances to get the efficient path.
+    """
+
 
 
 # =============================================================================
