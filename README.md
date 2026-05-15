@@ -86,8 +86,10 @@
 
 - **Initialization : why the invariant holds before iteration 1:**
   Source node is initialized to zero, all other nodes are set to infinity. No path has been discovered, the only shortest path is S.
+  
 - **Maintenance : why finalizing the min-dist node is always correct:**
   As edge weights are non-negative, dist[u] is the shortest discovered path using finalized min-dist nodes.
+  
 - **Termination : what the invariant guarantees when the algorithm ends:**
   Finalized nodes are the shortest and cheapest path calculated in the graph.
 
@@ -106,17 +108,17 @@ The Torchbearer's planner correct routing decisions applies correct distances to
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** Greedy looks for lowest number and it does not account for potential future paths that are cheaper overall.
+- **Counter-example setup:** With entrance Node S. relics B, C, D, and exit node T, but B -> D = 3
+- **What greedy picks:** Route: S -> B -> D -> C -> T total fuel = 1 + 3 + 1 + 1 = 6
+- **What optimal picks:** Route: S -> D -> C -> B -> T total fuel = 2 + 1 + 1 + 1 = 5 
+- **Why greedy loses:** Greedy loses because it only focuses on the cheapest route, when it doesn't consider all routes that are possibly cheaper overall. 
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- Greedy fails because it doesn't focus on the order of all possible routes and commits to the cheapest routes only.
 
 ---
 
