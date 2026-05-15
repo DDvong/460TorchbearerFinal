@@ -225,6 +225,18 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
 
     TODO
     """
+    #intialization
+    current_loc = spawn
+    relics_remaining = list(relics)
+    relics_visited_order = []
+    cost_so_far = 0.0
+    best = [float('inf'), []] #holds the best minimum cost and ordered relic list
+
+    #calls the search
+    _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
+             cost_so_far, exit_node, best)
+
+    return tuple(best)
     pass
 
 
