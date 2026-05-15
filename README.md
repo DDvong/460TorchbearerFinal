@@ -16,7 +16,6 @@
 
 - **Why this requires a search over orders (one sentence):**
 - We search over orders to identify different orders to find the minimum fuel cost.
-- 
 ---
 
 ## Part 2: Precomputation Design
