@@ -190,7 +190,15 @@ def explain_search():
 
     TODO
     """
-    return "TODO"
+    return """
+    Part 4:
+    - The failure mode: Greedy looks for lowest number and it does not account for potential future paths that are cheaper overall.
+    - Counter-example setup: With entrance Node S. relics B, C, D, and exit node T, but B -> D = 3
+    - What greedy picks: Route: S -> B -> D -> C -> T total fuel = 1 + 3 + 1 + 1 = 6
+    - What optimal picks: Route: S -> D -> C -> B -> T total fuel = 2 + 1 + 1 + 1 = 5
+    - Why greedy loses: Greedy loses because it only focuses on the cheapest cost, when it doesn't consider all routes that are possibly cheaper overall.
+    - What the Algorithm Must Explore: Greedy doesn't focus on the order of all possible routes to potentially get a cheaper route, by not doing so it only commits to the cheapest cost.
+    """
 
 
 # =============================================================================
