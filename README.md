@@ -131,9 +131,9 @@ The Torchbearer's planner correct routing decisions applies correct distances to
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | current_loc | node | Starting location of spawn |
+| Relics already collected | relics_remaining | list | Relics that are not visited yet |
+| Fuel cost so far | cost_so_far | float | Collected fuel cost |
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -141,18 +141,18 @@ The Torchbearer's planner correct routing decisions applies correct distances to
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | list |
+| Operation: check if relic already collected | Time complexity: O(n)|
+| Operation: mark a relic as collected | Time complexity: O(n) |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1) |
+| Why this structure fits | Ordered list |
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** k!
+- **Why:** Visiting every possible route
 
 ---
 
