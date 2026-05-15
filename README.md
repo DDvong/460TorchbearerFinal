@@ -3,6 +3,7 @@
 **Student Name:** Dylan Vongkaysone
 **Student ID:** 828232529
 **Course:** CS 460 – Algorithms | Spring 2026
+
 ---
 
 ## Part 1: Problem Analysis
@@ -137,7 +138,5 @@ The Torchbearer's planner correct routing decisions applies correct distances to
 ---
 
 ## References
-
-> Bullet list. If none beyond lecture notes, write that.
 
 -Youtube videos for visualization, such as Abdul Bari, ByteQuest.
