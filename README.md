@@ -85,19 +85,17 @@
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
-
+  Source node is initialized to zero, all other nodes are set to infinity. No path has been discovered, the only shortest path is S.
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
-
+  As edge weights are non-negative, dist[u] is the shortest discovered path using finalized min-dist nodes.
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  Finalized nodes are the shortest and cheapest path calculated in the graph.
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+The Torchbearer's planner correct routing decisions applies correct distances to get the efficient path
 
 ---
 
