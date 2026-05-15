@@ -112,13 +112,13 @@ The Torchbearer's planner correct routing decisions applies correct distances to
 - **Counter-example setup:** With entrance Node S. relics B, C, D, and exit node T, but B -> D = 3
 - **What greedy picks:** Route: S -> B -> D -> C -> T total fuel = 1 + 3 + 1 + 1 = 6
 - **What optimal picks:** Route: S -> D -> C -> B -> T total fuel = 2 + 1 + 1 + 1 = 5 
-- **Why greedy loses:** Greedy loses because it only focuses on the cheapest route, when it doesn't consider all routes that are possibly cheaper overall. 
+- **Why greedy loses:** Greedy loses because it only focuses on the cheapest cost, when it doesn't consider all routes that are possibly cheaper overall. 
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- Greedy fails because it doesn't focus on the order of all possible routes and commits to the cheapest routes only.
+- Greedy doesn't focus on the order of all possible routes to potentially get a cheaper route, by not doing so it only commits to the cheapest cost.
 
 ---
 
