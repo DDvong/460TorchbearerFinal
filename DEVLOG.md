@@ -19,7 +19,7 @@ I will work on the problems sequentially starting at part 1 and work my way down
 
 ---
 
-## Entry 2 – 5/10/2026: Implemented 2A and 2B
+## Entry 2 – 5/10/2026: Did 2A and 2B
 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
@@ -28,9 +28,9 @@ I struggled to trace how the heap and dictionary interacted togther but I compar
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – 5/13-14/2026: Did 2C - 4
 
-_Your entry here._
+It was straightforward I'd say, had to trace and watched videos for visualization.
 
 ---
 
